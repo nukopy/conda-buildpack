@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-CONDA_VERSION=3.16.0 # --> Miniconda --> Miniconda3
+CONDA_VERSION=4.5.11 # --> Miniconda --> Miniconda3
 if [ ! -d /app/.heroku/miniconda ]; then
     puts-step "Preparing Python/Miniconda Environment (${CONDA_VERSION})"
     
