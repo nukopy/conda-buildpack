@@ -29,7 +29,6 @@ if [ -f conda-requirements.txt ]; then
     # conda install --no-deps --file conda-requirements.txt --yes | indent
     conda install --file conda-requirements.txt --yes | indent
 fi
-fi
 
 if [ -f environment.yml ]; then
     puts-step "Creating conda environment"
