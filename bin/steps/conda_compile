@@ -2,10 +2,11 @@
 CONDA_VERSION=3.8.3
 if [ ! -d /app/.heroku/miniconda ]; then
     puts-step "Preparing Python/Miniconda Environment (${CONDA_VERSION})"
-    puts-step "----- pre-curl -----"
-    curl -O http://repo.continuum.io/miniconda/Miniconda-${CONDA_VERSION}-Linux-x86_64.sh
+    puts-step "----- pre-curl(install) -----"
+    curl -iO http://repo.continuum.io/miniconda/Miniconda-${CONDA_VERSION}-Linux-x86_64.sh
+    # "Miniconda-${CONDA_VERSION}-Linux-x86_64.sh"　become a file name
     bash Miniconda-${CONDA_VERSION}-Linux-x86_64.sh -p /app/.heroku/miniconda/ -b | indent
-    rm -fr Miniconda-${CONDA_VERSION}-Linux-x86_64.sh
+    rm -rf Miniconda-${CONDA_VERSION}-Linux-x86_64.sh
     puts-step "----- after-curl -----"
     conda --version
     conda update conda --quiet --yes | indent
